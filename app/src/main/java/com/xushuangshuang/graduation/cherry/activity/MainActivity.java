@@ -1,4 +1,4 @@
-package com.xushuangshuang.graduation.cherry;
+package com.xushuangshuang.graduation.cherry.activity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +12,12 @@ import android.view.Window;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
+import com.xushuangshuang.graduation.cherry.fragment.MainTab01;
+import com.xushuangshuang.graduation.cherry.fragment.MainTab02;
+import com.xushuangshuang.graduation.cherry.fragment.MainTab03;
+import com.xushuangshuang.graduation.cherry.fragment.MenuLeftFragment;
+import com.xushuangshuang.graduation.cherry.fragment.MenuRightFragment;
+import com.xushuangshuang.graduation.cherry.R;
 
 public class MainActivity extends SlidingFragmentActivity
 {
@@ -28,7 +34,6 @@ public class MainActivity extends SlidingFragmentActivity
 		setContentView(R.layout.activity_main);
 		// 初始化SlideMenu
 		initRightMenu();
-		// 初始化ViewPager
 		initViewPager();
 
 	}

@@ -1,4 +1,4 @@
-package com.xushuangshuang.graduation.cherry;
+package com.xushuangshuang.graduation.cherry.fragment;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+
+import com.xushuangshuang.graduation.cherry.R;
 
 public class MenuLeftFragment extends Fragment
 {
