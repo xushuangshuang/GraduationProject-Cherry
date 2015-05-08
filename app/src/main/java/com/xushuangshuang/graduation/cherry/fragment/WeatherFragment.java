@@ -8,13 +8,14 @@ import android.view.ViewGroup;
 
 import com.xushuangshuang.graduation.cherry.R;
 
-public class MainTab02 extends Fragment
+public class WeatherFragment extends Fragment
 {
 
+	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
-		View messageLayout = inflater.inflate(R.layout.main_tab_02, container, false);
-		return messageLayout;
+		View newsLayout = inflater.inflate(R.layout.weather_fragment, container, false);
+		return newsLayout;
 	}
 
 }

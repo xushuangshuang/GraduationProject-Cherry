@@ -14,7 +14,7 @@ import android.widget.ListView;
 
 import com.xushuangshuang.graduation.cherry.R;
 
-public class MenuLeftFragment extends Fragment
+public class MenuLeftManageFragment extends Fragment
 {
 	private View mView;
 	private ListView mCategories;

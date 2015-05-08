@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.xushuangshuang.graduation.cherry.R;
 
-public class MenuRightFragment extends Fragment
+public class MenuRightPersonalFragment extends Fragment
 {
 	private View mView;
 

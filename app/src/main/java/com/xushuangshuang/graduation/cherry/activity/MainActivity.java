@@ -12,11 +12,12 @@ import android.view.Window;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
-import com.xushuangshuang.graduation.cherry.fragment.MainTab01;
-import com.xushuangshuang.graduation.cherry.fragment.MainTab02;
-import com.xushuangshuang.graduation.cherry.fragment.MainTab03;
-import com.xushuangshuang.graduation.cherry.fragment.MenuLeftFragment;
-import com.xushuangshuang.graduation.cherry.fragment.MenuRightFragment;
+import com.xushuangshuang.graduation.cherry.fragment.GameFragment;
+import com.xushuangshuang.graduation.cherry.fragment.MenuLeftManageFragment;
+import com.xushuangshuang.graduation.cherry.fragment.MenuRightPersonalFragment;
+import com.xushuangshuang.graduation.cherry.fragment.MyProductFragment;
+import com.xushuangshuang.graduation.cherry.fragment.NewFragment;
+import com.xushuangshuang.graduation.cherry.fragment.WeatherFragment;
 import com.xushuangshuang.graduation.cherry.R;
 
 public class MainActivity extends SlidingFragmentActivity
@@ -41,12 +42,14 @@ public class MainActivity extends SlidingFragmentActivity
 	private void initViewPager()
 	{
 		mViewPager = (ViewPager) findViewById(R.id.id_viewpager);
-		MainTab01 tab01 = new MainTab01();
-		MainTab02 tab02 = new MainTab02();
-		MainTab03 tab03 = new MainTab03();
-		mFragments.add(tab01);
-		mFragments.add(tab02);
-		mFragments.add(tab03);
+		MyProductFragment myProductFragment = new MyProductFragment();
+		NewFragment newFragment = new NewFragment();
+		WeatherFragment weatherFragment = new WeatherFragment();
+        GameFragment gameFragment = new GameFragment();
+		mFragments.add(myProductFragment);
+		mFragments.add(newFragment);
+		mFragments.add(weatherFragment);
+        mFragments.add(gameFragment);
 		/**
 		 * 初始化Adapter
 		 */
@@ -70,7 +73,7 @@ public class MainActivity extends SlidingFragmentActivity
 	private void initRightMenu()
 	{
 		
-		Fragment leftMenuFragment = new MenuLeftFragment();
+		Fragment leftMenuFragment = new MenuLeftManageFragment();
 		setBehindContentView(R.layout.left_menu_frame);
 		getSupportFragmentManager().beginTransaction()
 				.replace(R.id.id_left_menu_frame, leftMenuFragment).commit();
@@ -89,7 +92,7 @@ public class MainActivity extends SlidingFragmentActivity
 		menu.setSecondaryShadowDrawable(R.drawable.shadow);
 		//设置右边（二级）侧滑菜单
 		menu.setSecondaryMenu(R.layout.right_menu_frame);
-		Fragment rightMenuFragment = new MenuRightFragment();
+		Fragment rightMenuFragment = new MenuRightPersonalFragment();
 		getSupportFragmentManager().beginTransaction()
 				.replace(R.id.id_right_menu_frame, rightMenuFragment).commit();
 	}

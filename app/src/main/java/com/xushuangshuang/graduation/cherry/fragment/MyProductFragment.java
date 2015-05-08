@@ -8,14 +8,14 @@ import android.view.ViewGroup;
 
 import com.xushuangshuang.graduation.cherry.R;
 
-public class MainTab03 extends Fragment
+public class MyProductFragment extends Fragment
 {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
-		View newsLayout = inflater.inflate(R.layout.main_tab_03, container, false);
-		return newsLayout;
+		return  inflater.inflate(R.layout.my_product_fragment, container, false);
+	
 	}
 
 }
