@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="57dp"
+    android:background="@color/skyblue">
+    <LinearLayout
+        android:id="@+id/top_head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:background="@color/skyblue"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/top_head_settting_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <at.markushi.ui.ActionView
+                android:id="@+id/action"
+                android:layout_width="56dip"
+                android:layout_height="56dip"
+                android:padding="16dip"
+                app:av_color="@android:color/white"
+                app:av_action="drawer"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/top_head_search_layout"
+            android:layout_width="0dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:background="@color/whitesmoke" >
+
+            <EditText
+                android:id="@+id/top_head_search_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:cursorVisible="false"
+                android:drawableLeft="@drawable/search_pic"
+                android:drawablePadding="3.3dp"
+                android:textSize="13sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/top_head_download_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:descendantFocusability="blocksDescendants">
+
+            <ImageView
+                android:id="@+id/top_head_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:paddingTop="18dp"
+                android:paddingLeft="16dp"
+                android:src="@drawable/download_btn" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

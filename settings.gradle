@@ -1,1 +1,1 @@
-include ':app', 'libraries:library'
+include ':app', 'libraries:SlidingMenu','libraries:android-ui-master'
