@@ -13,7 +13,7 @@
         >
 
         <LinearLayout
-            android:id="@+id/id_tab_chat_ll"
+            android:id="@+id/id_tab_prodect_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -23,7 +23,7 @@
             android:padding="10dip" >
 
             <TextView
-                android:id="@+id/id_chat_tv"
+                android:id="@+id/id_prodect_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -33,7 +33,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/id_tab_friend_ll"
+            android:id="@+id/id_tab_new_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -45,7 +45,7 @@
             android:saveEnabled="false" >
 
             <TextView
-                android:id="@+id/id_friend_tv"
+                android:id="@+id/id_new_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -55,7 +55,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/id_tab_contacts_ll"
+            android:id="@+id/id_tab_weather_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -66,7 +66,7 @@
             android:padding="10dip" >
 
             <TextView
-                android:id="@+id/id_contacts_tv"
+                android:id="@+id/id_weather_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -76,7 +76,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/id_tab_contacts_l2"
+            android:id="@+id/id_tab_game_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -87,7 +87,7 @@
             android:padding="10dip" >
 
             <TextView
-                android:id="@+id/id_contacts_tv_1"
+                android:id="@+id/id_game_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -98,12 +98,12 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/id_tab_line_iv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:contentDescription="tab"
-        android:background="@drawable/tab_selected_pressed_holo" >
-    </ImageView>
+    android:id="@+id/id_tab_line_iv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="tab"
+    android:background="@drawable/tab_guide_line_background" >
+</ImageView>
 
     <View
         android:layout_width="match_parent"

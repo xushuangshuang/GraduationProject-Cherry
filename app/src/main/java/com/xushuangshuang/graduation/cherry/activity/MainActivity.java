@@ -3,8 +3,6 @@ package com.xushuangshuang.graduation.cherry.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.ActionBar;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -16,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.jeremyfeinstein.slidingmenu.lib.CustomViewAbove;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.xushuangshuang.graduation.cherry.fragment.GameFragment;
@@ -35,7 +32,7 @@ public class MainActivity extends SlidingFragmentActivity implements ViewPager.O
     private ImageView imageViewTabLine;
     private int currentIndex;
     private int screenWidth;
-    private TextView mTabChatTv, mTabContactsTv, mTabFriendTv, mTabGameTv;
+    private TextView mTabProtectTv, mTabWeatherTv, mTabNewTv, mTabGameTv;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,20 +40,23 @@ public class MainActivity extends SlidingFragmentActivity implements ViewPager.O
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         // 初始化SlideMenu
-        initRightMenu();
-        initViewPager();
+        init();
         initTabLineWidth();
 
     }
 
-    private void initViewPager() {
+    private void init() {
         imageViewTabLine = (ImageView) findViewById(R.id.id_tab_line_iv);
         mViewPager = (ViewPager) findViewById(R.id.id_viewpager);
-        mTabContactsTv = (TextView) this.findViewById(R.id.id_contacts_tv);
-        mTabChatTv = (TextView) this.findViewById(R.id.id_chat_tv);
-        mTabFriendTv = (TextView) this.findViewById(R.id.id_friend_tv);
-        mTabGameTv = (TextView) findViewById(R.id.id_contacts_tv_1);
+        mTabWeatherTv = (TextView) this.findViewById(R.id.id_weather_tv);
+        mTabProtectTv = (TextView) this.findViewById(R.id.id_prodect_tv);
+        mTabNewTv = (TextView) this.findViewById(R.id.id_new_tv);
+        mTabGameTv = (TextView) findViewById(R.id.id_game_tv);
+        initViewPager();
+        initSlidingMenu();
+    }
 
+    private void initViewPager() {
         MyProductFragment myProductFragment = new MyProductFragment();
         NewFragment newFragment = new NewFragment();
         WeatherFragment weatherFragment = new WeatherFragment();
@@ -81,10 +81,10 @@ public class MainActivity extends SlidingFragmentActivity implements ViewPager.O
         };
         mViewPager.setAdapter(mAdapter);
         mViewPager.setCurrentItem(0);
+        mViewPager.setOnPageChangeListener(this);
     }
 
-    private void initRightMenu() {
-
+    private void initSlidingMenu() {
         Fragment leftMenuFragment = new MenuLeftManageFragment();
         setBehindContentView(R.layout.left_menu_frame);
         getSupportFragmentManager().beginTransaction()
@@ -123,24 +123,33 @@ public class MainActivity extends SlidingFragmentActivity implements ViewPager.O
 
         if (currentIndex == 0 && position == 0)// 0->1
         {
-            layoutParams.leftMargin = (int) (offset * (screenWidth * 1.0 / 3) + currentIndex
-                    * (screenWidth / 3));
+            layoutParams.leftMargin = (int) (offset * (screenWidth * 1.0 / 4) + currentIndex
+                    * (screenWidth / 4));
 
         } else if (currentIndex == 1 && position == 0) // 1->0
         {
             layoutParams.leftMargin = (int) (-(1 - offset)
-                    * (screenWidth * 1.0 / 3) + currentIndex
-                    * (screenWidth / 3));
+                    * (screenWidth * 1.0 / 4) + currentIndex
+                    * (screenWidth / 4));
 
         } else if (currentIndex == 1 && position == 1) // 1->2
         {
-            layoutParams.leftMargin = (int) (offset * (screenWidth * 1.0 / 3) + currentIndex
-                    * (screenWidth / 3));
+            layoutParams.leftMargin = (int) (offset * (screenWidth * 1.0 / 4) + currentIndex
+                    * (screenWidth / 4));
         } else if (currentIndex == 2 && position == 1) // 2->1
         {
             layoutParams.leftMargin = (int) (-(1 - offset)
-                    * (screenWidth * 1.0 / 3) + currentIndex
-                    * (screenWidth / 3));
+                    * (screenWidth * 1.0 / 4) + currentIndex
+                    * (screenWidth / 4));
+        }else if (currentIndex == 2 && position == 2) // 2->3
+        {
+            layoutParams.leftMargin = (int) (offset * (screenWidth * 1.0 / 4) + currentIndex
+                    * (screenWidth / 4));
+        } else if (currentIndex == 3 && position == 2) // 3->2
+        {
+            layoutParams.leftMargin = (int) (-(1 - offset)
+                    * (screenWidth * 1.0 / 4) + currentIndex
+                    * (screenWidth / 4));
         }
         imageViewTabLine.setLayoutParams(layoutParams);
     }
@@ -150,16 +159,16 @@ public class MainActivity extends SlidingFragmentActivity implements ViewPager.O
         resetTextView();
         switch (position) {
             case 0:
-                mTabChatTv.setTextColor(R.color.blue);
+                mTabProtectTv.setTextColor(getResources().getColor(R.color.blue));
                 break;
             case 1:
-                mTabFriendTv.setTextColor(R.color.blue);
+                mTabNewTv.setTextColor(getResources().getColor(R.color.blue));
                 break;
             case 2:
-                mTabContactsTv.setTextColor(R.color.blue);
+                mTabWeatherTv.setTextColor(getResources().getColor(R.color.blue));
                 break;
             case 3:
-                mTabGameTv.setTextColor(R.color.blue);
+                mTabGameTv.setTextColor(getResources().getColor(R.color.blue));
                 break;
         }
         currentIndex = position;
@@ -172,7 +181,7 @@ public class MainActivity extends SlidingFragmentActivity implements ViewPager.O
 
 
     /**
-     * 设置滑动条的宽度为屏幕的1/3(根据Tab的个数而定)
+     * 设置滑动条的宽度为屏幕的1/4(根据Tab的个数而定)
      */
     private void initTabLineWidth() {
         DisplayMetrics dpMetrics = new DisplayMetrics();
@@ -181,7 +190,7 @@ public class MainActivity extends SlidingFragmentActivity implements ViewPager.O
         screenWidth = dpMetrics.widthPixels;
         LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) imageViewTabLine
                 .getLayoutParams();
-        lp.width = screenWidth / 3;
+        lp.width = screenWidth / 4;
         imageViewTabLine.setLayoutParams(lp);
     }
 
@@ -189,8 +198,9 @@ public class MainActivity extends SlidingFragmentActivity implements ViewPager.O
      * 重置颜色
      */
     private void resetTextView() {
-        mTabChatTv.setTextColor(R.color.black);
-        mTabFriendTv.setTextColor(R.color.black);
-        mTabContactsTv.setTextColor(R.color.black);
+        mTabProtectTv.setTextColor(getResources().getColor(R.color.black));
+        mTabNewTv.setTextColor(getResources().getColor(R.color.black));
+        mTabWeatherTv.setTextColor(getResources().getColor(R.color.black));
+        mTabGameTv.setTextColor(getResources().getColor(R.color.black));
     }
 }
