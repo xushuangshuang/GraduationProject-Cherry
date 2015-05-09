@@ -5,24 +5,158 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="45dp"
-        android:background="@color/skyblue" >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/manager_bg"
+        android:orientation="vertical" >
 
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center"
-            android:text="功能"
-            android:textColor="#fff"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:layout_height="33dp"
+            android:layout_marginTop="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="17dp"
+            android:text="@string/manager_personal"
+            android:textColor="@color/manager_greytxt_bg"
+            android:textSize="12sp" />
 
-    <ListView
-        android:id="@+id/id_listview_categories"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textAlignment="center" />
+        <RelativeLayout
+            android:id="@+id/more_download_setting"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="17dp"
+                android:text="@string/manager_download"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/manager_deliver" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/more_game_update_setting"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="17dp"
+                android:text="@string/manager_game_update"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/manager_deliver" >
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="33dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="17dp"
+            android:text="@string/setting_others"
+            android:textColor="@color/manager_greytxt_bg"
+            android:textSize="12sp" />
+
+        <RelativeLayout
+            android:id="@+id/more_update_setting"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="17dp"
+                android:text="@string/download_state_setting"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/manager_deliver" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/more_update_check"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="17dp"
+                android:text="@string/manager_check_update"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/manager_deliver" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/more_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="17dp"
+                android:text="@string/more_manager_feedback"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/manager_deliver" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/more_about"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="17dp"
+                android:text="@string/manager_about"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>

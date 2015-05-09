@@ -14,32 +14,23 @@ import android.widget.ListView;
 
 import com.xushuangshuang.graduation.cherry.R;
 
-public class MenuLeftManageFragment extends Fragment
-{
-	private View mView;
-	private ListView mCategories;
-	private List<String> mDatas = Arrays
-			.asList("聊天", "发现", "通讯录", "朋友圈", "订阅号");
-	private ListAdapter mAdapter;
+public class MenuLeftManageFragment extends Fragment {
+    private View mView;
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState)
-	{
-		if (mView == null)
-		{
-			initView(inflater, container);
-		}
-		return mView;
-	}
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.left_menu, container, false);
+    }
 
-	private void initView(LayoutInflater inflater, ViewGroup container)
-	{
-		mView = inflater.inflate(R.layout.left_menu, container, false);
-		mCategories = (ListView) mView
-				.findViewById(R.id.id_listview_categories);
-		mAdapter = new ArrayAdapter<String>(getActivity(),
-				android.R.layout.simple_list_item_1, mDatas);
-		mCategories.setAdapter(mAdapter);
-	}
+//	private void initView(LayoutInflater inflater, ViewGroup container)
+//	{
+//
+//
+//		mCategories = (ListView) mView
+//				.findViewById(R.id.id_listview_categories);
+//		mAdapter = new ArrayAdapter<String>(getActivity(),
+//				android.R.layout.simple_list_item_1, mDatas);
+//		mCategories.setAdapter(mAdapter);
+//	}
 }
