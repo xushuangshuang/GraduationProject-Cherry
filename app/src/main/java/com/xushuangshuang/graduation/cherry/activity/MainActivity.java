@@ -159,16 +159,16 @@ public class MainActivity extends SlidingFragmentActivity implements ViewPager.O
         resetTextView();
         switch (position) {
             case 0:
-                mTabProtectTv.setTextColor(getResources().getColor(R.color.blue));
+                mTabProtectTv.setTextColor(getResources().getColor(R.color.white));
                 break;
             case 1:
-                mTabNewTv.setTextColor(getResources().getColor(R.color.blue));
+                mTabNewTv.setTextColor(getResources().getColor(R.color.white));
                 break;
             case 2:
-                mTabWeatherTv.setTextColor(getResources().getColor(R.color.blue));
+                mTabWeatherTv.setTextColor(getResources().getColor(R.color.white));
                 break;
             case 3:
-                mTabGameTv.setTextColor(getResources().getColor(R.color.blue));
+                mTabGameTv.setTextColor(getResources().getColor(R.color.white));
                 break;
         }
         currentIndex = position;
